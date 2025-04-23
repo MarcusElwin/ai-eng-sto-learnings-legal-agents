@@ -48,3 +48,21 @@ def display_formatted_sample(content, title, num_lines=10):
     """
 
     display(HTML(html))
+
+
+def display_agent_review(result):
+    """
+    Formats agent output as Markdown code for display in the notebook.
+    
+    Args:
+        result: The AgentRunResult object containing the review
+    """
+    review_text = result.output
+    
+    markdown = f"""
+```markdown
+{review_text}
+```
+"""
+    
+    return Markdown(markdown)
